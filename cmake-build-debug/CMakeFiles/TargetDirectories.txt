@@ -1,0 +1,3 @@
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/cmake-build-debug/CMakeFiles/Vector.dir
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/cmake-build-debug/CMakeFiles/rebuild_cache.dir
