@@ -3,6 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <stdbool.h>
 #include <assert.h>
 
 #define ERROR {fprintf(stderr, "bad alloc"); \
@@ -30,6 +31,10 @@ void clear(Vector *v);
 void shrinkToFit(Vector *v);
 
 void deleteVector(Vector *v);
+
+bool isEmpty(Vector v);
+
+bool isFull(Vector v);
 
 void outputVector(Vector v);
 

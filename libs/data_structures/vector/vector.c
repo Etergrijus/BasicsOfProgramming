@@ -48,9 +48,20 @@ void shrinkToFit(Vector *v) {
 
 void deleteVector(Vector *v) {
     free(v->data);
+    v->size = 0;
+    v->capacity = 0;
+}
+
+bool isEmpty(Vector v) {
+    return v.size == 0 ? 1 : 0;
+}
+
+bool isFull(Vector v) {
+    return v.size == v.capacity ? 1 : 0;
 }
 
 void outputVector(Vector v) {
     for (int i = 0; i < v.size; i++)
         printf("%d ", v.data[i]);
+    printf("\n");
 }

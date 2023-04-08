@@ -2,43 +2,75 @@
 
 #include "libs/data_structures/vector/vector.h"
 
-void tests() {
-    Vector v0 = createVector(SIZE_MAX);
-    printf("%zu\n", v0.capacity);
-
+void test_of_basic_functional_1() {
+    printf("first_test_of_basic_memory_functional:\n");
     Vector v = createVector(7);
     reserve(&v, 0);
     fillPartOfVector(&v, 10);
-    clear(&v);
-    shrinkToFit(&v);
+    printf("checkOfFullness - %d\n", isFull(v));
     outputVector(v);
-    printf("\nCapacity of v - %zu\n", v.capacity);
 
-    Vector v1 = createVector(0);
-    fillPartOfVector(&v1, 6);
-    reserve(&v1, 10);
-    fillPartOfVector(&v1, 2);
-    shrinkToFit(&v1);
-    outputVector(v1);
-    printf("\nCapacity of v1 - %zu\n", v1.capacity);
+    clear(&v);
+    printf("checkOfEmptiness - %d\n", isEmpty(v));
+    shrinkToFit(&v);
+    printf("anotherCheckOfFullness - %d\n", isFull(v));
+    outputVector(v);
+    printf("Capacity of v - %zu\n", v.capacity);
+    printf("---------------\n");
+}
 
-    Vector v2 = createVector(3);
-    fillPartOfVector(&v2, 1);
-    fillPartOfVector(&v2, 3);
-    fillPartOfVector(&v2, 2);
-    fillPartOfVector(&v2, 6);
-    clear(&v2);
-    fillPartOfVector(&v2, 4);
-    outputVector(v2);
-    printf("\n");
+void test_of_basic_functional_2() {
+    printf("second_test_of_basic_memory_functional:\n");
+    Vector v = createVector(0);
+    fillPartOfVector(&v, 6);
 
-    Vector v3 = createVector(7);
-    fillPartOfVector(&v3, 6);
-    reserve(&v3, 2);
-    outputVector(v3);
-    printf("\n");
-    deleteVector(&v3);
-    outputVector(v3);
+    reserve(&v, 10);
+    fillPartOfVector(&v, 2);
+    shrinkToFit(&v);
+    printf("checkOfEmptiness - %d\n", isEmpty(v));
+    printf("checkOfFullness - %d\n", isFull(v));
+    outputVector(v);
+    printf("Capacity of v - %zu\n", v.capacity);
+    printf("---------------\n");
+}
+
+void test_of_basic_functional_3() {
+    printf("third_test_of_basic_memory_functional:\n");
+    Vector v = createVector(3);
+    fillPartOfVector(&v, 1);
+    fillPartOfVector(&v, 3);
+    printf("checkOfFullness - %d\n", isFull(v));
+    fillPartOfVector(&v, 2);
+    fillPartOfVector(&v, 6);
+    outputVector(v);
+
+    clear(&v);
+    fillPartOfVector(&v, 4);
+    outputVector(v);
+    printf("---------------\n");
+}
+
+void test_of_basic_functional_4() {
+    printf("fourth_test_of_basic_memory_functional:\n");
+    Vector v = createVector(7);
+    fillPartOfVector(&v, 6);
+    reserve(&v, 2);
+    outputVector(v);
+
+    deleteVector(&v);
+    printf("checkOfEmptiness - %d\n", isEmpty(v));
+    outputVector(v);
+    printf("---------------\n");
+}
+
+void tests() {
+    Vector v0 = createVector(SIZE_MAX);
+    printf("first_test: %zu\n\n", v0.capacity);
+
+    test_of_basic_functional_1();
+    test_of_basic_functional_2();
+    test_of_basic_functional_3();
+    test_of_basic_functional_4();
 }
 
 int main() {
