@@ -78,6 +78,7 @@ Vector_EXTERNAL_OBJECTS =
 
 Vector.exe: CMakeFiles/Vector.dir/main.c.obj
 Vector.exe: CMakeFiles/Vector.dir/build.make
+Vector.exe: libvec.a
 Vector.exe: CMakeFiles/Vector.dir/linklibs.rsp
 Vector.exe: CMakeFiles/Vector.dir/objects1.rsp
 Vector.exe: CMakeFiles/Vector.dir/link.txt

@@ -1,0 +1,2 @@
+C:\MinGW\bin\ar.exe qc libvec.a  CMakeFiles/vec.dir/libs/data_structures/vector/vector.c.obj
+C:\MinGW\bin\ranlib.exe libvec.a

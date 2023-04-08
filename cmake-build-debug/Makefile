@@ -55,17 +55,6 @@ CMAKE_BINARY_DIR = "C:\Program Files\JetBrains\CLion 2020.1\CLionProjects\Vector
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -76,6 +65,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	"C:\Program Files\JetBrains\CLion 2020.1\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -122,6 +122,46 @@ Vector/fast:
 	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/build
 .PHONY : Vector/fast
 
+#=============================================================================
+# Target rules for targets named vec
+
+# Build rule for target.
+vec: cmake_check_build_system
+	$(MAKE) -f CMakeFiles\Makefile2 vec
+.PHONY : vec
+
+# fast build rule for target.
+vec/fast:
+	$(MAKE) -f CMakeFiles\vec.dir\build.make CMakeFiles/vec.dir/build
+.PHONY : vec/fast
+
+libs/data_structures/vector/vector.obj: libs/data_structures/vector/vector.c.obj
+
+.PHONY : libs/data_structures/vector/vector.obj
+
+# target to build an object file
+libs/data_structures/vector/vector.c.obj:
+	$(MAKE) -f CMakeFiles\vec.dir\build.make CMakeFiles/vec.dir/libs/data_structures/vector/vector.c.obj
+.PHONY : libs/data_structures/vector/vector.c.obj
+
+libs/data_structures/vector/vector.i: libs/data_structures/vector/vector.c.i
+
+.PHONY : libs/data_structures/vector/vector.i
+
+# target to preprocess a source file
+libs/data_structures/vector/vector.c.i:
+	$(MAKE) -f CMakeFiles\vec.dir\build.make CMakeFiles/vec.dir/libs/data_structures/vector/vector.c.i
+.PHONY : libs/data_structures/vector/vector.c.i
+
+libs/data_structures/vector/vector.s: libs/data_structures/vector/vector.c.s
+
+.PHONY : libs/data_structures/vector/vector.s
+
+# target to generate assembly for a file
+libs/data_structures/vector/vector.c.s:
+	$(MAKE) -f CMakeFiles\vec.dir\build.make CMakeFiles/vec.dir/libs/data_structures/vector/vector.c.s
+.PHONY : libs/data_structures/vector/vector.c.s
+
 main.obj: main.c.obj
 
 .PHONY : main.obj
@@ -156,8 +196,12 @@ help:
 	@echo ... clean
 	@echo ... depend
 	@echo ... Vector
-	@echo ... edit_cache
 	@echo ... rebuild_cache
+	@echo ... vec
+	@echo ... edit_cache
+	@echo ... libs/data_structures/vector/vector.obj
+	@echo ... libs/data_structures/vector/vector.i
+	@echo ... libs/data_structures/vector/vector.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
