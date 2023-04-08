@@ -3,10 +3,13 @@
 
 #include <stdlib.h>
 #include <stdio.h>
+#include <assert.h>
 
 #define ERROR {fprintf(stderr, "bad alloc"); \
 exit(1); \
 };
+
+#define filename "inf.txt"
 
 typedef struct Vector {
     int *data;
@@ -14,11 +17,19 @@ typedef struct Vector {
     size_t capacity;
 } Vector;
 
-Vector createVector (size_t n);
+static fpos_t pos;
+
+Vector createVector(size_t n);
 
 void reserve(Vector *v, size_t newCapacity);
 
 void fillPartOfVector(Vector *v, size_t sizeFillingPart);
+
+void clear(Vector *v);
+
+void shrinkToFit(Vector *v);
+
+void deleteVector(Vector *v);
 
 void outputVector(Vector v);
 

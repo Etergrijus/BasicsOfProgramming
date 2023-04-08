@@ -11,10 +11,10 @@ stdlib.h
 -
 stdio.h
 -
+assert.h
+-
 
 C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/main.c
-stdio.h
--
 stdint.h
 -
 libs/data_structures/vector/vector.h
