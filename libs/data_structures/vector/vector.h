@@ -5,13 +5,23 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include <assert.h>
+#include <stdint.h>
 
-#define ERROR_OF_ALLOCATION {fprintf(stderr, "bad alloc"); \
+#define ERROR_OF_ALLOCATION {fprintf(stderr, "bad alloc\n"); \
 exit(1); \
 };
 
-#define ERROR_OF_DELETING_OF_LAST {fprintf(stderr, "Attempt to reduce an empty vector"); \
+#define ERROR_OF_DELETING_OF_LAST {fprintf(stderr, "Attempt to reduce an empty vector\n"); \
 exit(1); \
+};
+
+#define ERROR_OF_ACCESSING_BY_INDEX {fprintf(stderr, "IndexError: a[%d] is not exists\n", index); \
+exit(1); \
+};
+
+#define PTR_TESTS {printf("%p\n", front(&v)); \
+printf("%p\n", atVector(&v, index)); \
+printf("%p\n", back(&v)); \
 };
 
 #define filename "inf.txt"
@@ -49,6 +59,12 @@ int getVectorValue(Vector v, size_t i);
 void pushBack(Vector *v);
 
 void popBack(Vector *v);
+
+int* atVector(Vector *v, size_t index);
+
+int* back(Vector *v);
+
+int* front(Vector *v);
 
 void outputVector(Vector v);
 

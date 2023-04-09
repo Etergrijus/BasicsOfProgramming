@@ -83,6 +83,24 @@ void popBack(Vector *v) {
     else ERROR_OF_DELETING_OF_LAST
 }
 
+int* atVector(Vector *v, size_t index) {
+    if (index < v->size) {
+        int* ptr = v->data;
+        for (int i = 0; i < index; i++)
+            ptr++;
+        return ptr;
+    } else
+        ERROR_OF_ACCESSING_BY_INDEX
+}
+
+int* back(Vector *v) {
+    return atVector(v, v->size - 1);
+}
+
+int* front(Vector *v) {
+    return v->data;
+}
+
 void outputVector(Vector v) {
     for (int i = 0; i < v.size; i++)
         printf("%d ", v.data[i]);

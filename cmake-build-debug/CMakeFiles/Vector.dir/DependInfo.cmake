@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
+  "C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/test_file.c" "C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/cmake-build-debug/CMakeFiles/Vector.dir/libs/data_structures/vector/test_file.c.obj"
   "C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/main.c" "C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/cmake-build-debug/CMakeFiles/Vector.dir/main.c.obj"
   )
 set(CMAKE_C_COMPILER_ID "GNU")

@@ -135,6 +135,33 @@ vec/fast:
 	$(MAKE) -f CMakeFiles\vec.dir\build.make CMakeFiles/vec.dir/build
 .PHONY : vec/fast
 
+libs/data_structures/vector/test_file.obj: libs/data_structures/vector/test_file.c.obj
+
+.PHONY : libs/data_structures/vector/test_file.obj
+
+# target to build an object file
+libs/data_structures/vector/test_file.c.obj:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/libs/data_structures/vector/test_file.c.obj
+.PHONY : libs/data_structures/vector/test_file.c.obj
+
+libs/data_structures/vector/test_file.i: libs/data_structures/vector/test_file.c.i
+
+.PHONY : libs/data_structures/vector/test_file.i
+
+# target to preprocess a source file
+libs/data_structures/vector/test_file.c.i:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/libs/data_structures/vector/test_file.c.i
+.PHONY : libs/data_structures/vector/test_file.c.i
+
+libs/data_structures/vector/test_file.s: libs/data_structures/vector/test_file.c.s
+
+.PHONY : libs/data_structures/vector/test_file.s
+
+# target to generate assembly for a file
+libs/data_structures/vector/test_file.c.s:
+	$(MAKE) -f CMakeFiles\Vector.dir\build.make CMakeFiles/Vector.dir/libs/data_structures/vector/test_file.c.s
+.PHONY : libs/data_structures/vector/test_file.c.s
+
 libs/data_structures/vector/vector.obj: libs/data_structures/vector/vector.c.obj
 
 .PHONY : libs/data_structures/vector/vector.obj
@@ -199,6 +226,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... vec
 	@echo ... edit_cache
+	@echo ... libs/data_structures/vector/test_file.obj
+	@echo ... libs/data_structures/vector/test_file.i
+	@echo ... libs/data_structures/vector/test_file.s
 	@echo ... libs/data_structures/vector/vector.obj
 	@echo ... libs/data_structures/vector/vector.i
 	@echo ... libs/data_structures/vector/vector.s

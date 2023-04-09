@@ -110,6 +110,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/test_file.c">
+			<Option target="Vector"/>
+		</Unit>
 		<Unit filename="C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/vector.c">
 			<Option target="vec"/>
 		</Unit>
