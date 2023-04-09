@@ -6,13 +6,19 @@
 #include <stdbool.h>
 #include <assert.h>
 
-#define ERROR {fprintf(stderr, "bad alloc"); \
+#define ERROR_OF_ALLOCATION {fprintf(stderr, "bad alloc"); \
+exit(1); \
+};
+
+#define ERROR_OF_DELETING_OF_LAST {fprintf(stderr, "Attempt to reduce an empty vector"); \
 exit(1); \
 };
 
 #define filename "inf.txt"
 
 #define separator printf("---------------\n")
+
+#define func_name printf("%s:\n", __func__)
 
 typedef struct Vector {
     int *data;
@@ -41,6 +47,8 @@ bool isFull(Vector v);
 int getVectorValue(Vector v, size_t i);
 
 void pushBack(Vector *v);
+
+void popBack(Vector *v);
 
 void outputVector(Vector v);
 

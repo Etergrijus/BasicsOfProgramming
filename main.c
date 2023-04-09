@@ -83,6 +83,7 @@ void test_of_basic_functional_5() {
 }
 
 void test_pushBack_emptyVector() {
+    func_name;
     Vector v = createVector(0);
     for (int i = 0; i < 10; i++)
         pushBack(&v);
@@ -91,12 +92,42 @@ void test_pushBack_emptyVector() {
 }
 
 void test_pushBack_fullVector() {
+    func_name;
     Vector v = createVector(10);
     fillPartOfVector(&v, 10);
 
     for (int i = 0; i < 4; i++)
         pushBack(&v);
     outputVector(v);
+    separator;
+}
+
+void test_popBack_notEmptyVector() {
+    func_name;
+    Vector v = createVector(0);
+    pushBack(&v);
+
+    assert(v.size == 1);
+    popBack(&v);
+    assert(v.size == 0);
+    assert(v.capacity == 1);
+    printf("Tests are ok\n");
+
+    deleteVector(&v);
+    v = createVector(7);
+    fillPartOfVector(&v, 9);
+    for (int i = 0; i < 3; i++)
+        popBack(&v);
+    outputVector(v);
+    separator;
+}
+
+void test_popBack_emptyVector() {
+    func_name;
+    Vector v = createVector(2);
+    fillPartOfVector(&v, 2);
+    for (int i = 0; i < 3; i++)
+        popBack(&v);
 }
 
 void tests() {
@@ -111,6 +142,9 @@ void tests() {
 
     test_pushBack_emptyVector();
     test_pushBack_fullVector();
+
+    test_popBack_notEmptyVector();
+    test_popBack_emptyVector();
 }
 
 int main() {

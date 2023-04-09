@@ -1,14 +1,14 @@
 #include "vector.h"
 
-Vector createVector (size_t n) {
+Vector createVector(size_t n) {
     Vector v;
     v.capacity = n;
     v.size = 0;
-    v.data = (int*)malloc(sizeof(int) * v.capacity);
+    v.data = (int *) malloc(sizeof(int) * v.capacity);
 
     if (v.capacity == n)
         return v;
-    else ERROR
+    else ERROR_OF_ALLOCATION
 }
 
 void reserve(Vector *v, size_t newCapacity) {
@@ -16,10 +16,9 @@ void reserve(Vector *v, size_t newCapacity) {
         v->size = newCapacity;
 
     v->capacity = newCapacity;
-    v->data = (int*)realloc(v->data, sizeof(int) * v->capacity);
+    v->data = (int *) realloc(v->data, sizeof(int) * v->capacity);
 
-    if (v->data == NULL && newCapacity != 0)
-        ERROR
+    if (v->data == NULL && newCapacity != 0) ERROR_OF_ALLOCATION
 }
 
 void fillPartOfVector(Vector *v, size_t sizeFillingPart) {
@@ -76,6 +75,12 @@ int getVectorValue(Vector v, size_t i) {
 //свои функции и то, что есть в пособии.
 void pushBack(Vector *v) {
     fillPartOfVector(v, 1);
+}
+
+void popBack(Vector *v) {
+    if (v->size > 0)
+        v->size--;
+    else ERROR_OF_DELETING_OF_LAST
 }
 
 void outputVector(Vector v) {
