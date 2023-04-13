@@ -11,6 +11,12 @@ Vector createVector(size_t n) {
     else ERROR_OF_ALLOCATION
 }
 
+void outputVector(Vector v) {
+    for (int i = 0; i < v.size; i++)
+        printf("%d ", v.data[i]);
+    printf("\n");
+}
+
 void reserve(Vector *v, size_t newCapacity) {
     if (newCapacity < v->capacity)
         v->size = newCapacity;
@@ -99,10 +105,4 @@ int* back(Vector *v) {
 
 int* front(Vector *v) {
     return v->data;
-}
-
-void outputVector(Vector v) {
-    for (int i = 0; i < v.size; i++)
-        printf("%d ", v.data[i]);
-    printf("\n");
 }
