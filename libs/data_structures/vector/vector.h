@@ -31,13 +31,6 @@ printf("%p\n", back(&v)); \
 
 #define func_name printf("%s:\n", __func__)
 
-
-/*void f() {
-    setbuf(stdout, NULL);
-    fprintf( stderr, "Attempt to reduce an empty vector\n");
-    exit(1);
-};*/
-
 typedef struct Vector {
     int *data;
     size_t size;

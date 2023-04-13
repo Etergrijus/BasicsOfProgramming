@@ -6,5 +6,19 @@
 
 #IncludeRegexTransform: 
 
-C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/main.c
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/test_file.c
+../vector/vector.h
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/vector.h
+
+C:/Program Files/JetBrains/CLion 2020.1/CLionProjects/Vector/libs/data_structures/vector/vector.h
+stdlib.h
+-
+stdio.h
+-
+stdbool.h
+-
+assert.h
+-
+stdint.h
+-
 
